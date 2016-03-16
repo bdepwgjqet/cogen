@@ -19,10 +19,10 @@ def execute(argv=None):
         for block in blocks:
             if block.lang == "python":
                 exec block.get()
+                print cobody
+                print cobody
             else:
-                print block.get()
-            print cobody
-            print cobody
+                print block.get().rstrip()
     else:
         print 'Parameter Error'
 
