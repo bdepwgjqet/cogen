@@ -7,3 +7,6 @@ class Block(object):
     def __init__(self, lang):
         self.lang = lang
         self.code = []
+
+    def get(self):
+        return "".join(self.code);

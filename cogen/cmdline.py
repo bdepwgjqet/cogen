@@ -5,6 +5,8 @@
 
 import sys
 import reader
+from settings import cohead
+from settings import cobody
 
 
 def execute(argv=None):
@@ -12,11 +14,15 @@ def execute(argv=None):
         argv = sys.argv
     if len(argv) == 2:
         blocks = reader.read_blocks(argv[1])
+        print cohead
+        print cobody
         for block in blocks:
-            print block.lang
-            for line in block.code:
-                print line
-            print "====="
+            if block.lang == "python":
+                exec block.get()
+            else:
+                print block.get()
+            print cobody
+            print cobody
     else:
         print 'Parameter Error'
 
