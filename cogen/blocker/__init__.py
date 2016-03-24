@@ -9,4 +9,4 @@ class Block(object):
         self.code = []
 
     def get(self):
-        return "".join(self.code);
+        return "".join(self.code)

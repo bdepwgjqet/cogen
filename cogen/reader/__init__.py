@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import os
-import settings
+import config
 from blocker import Block
-from settings import lamark
-from settings import laend
+from config import lamark
+from config import laend
 
 
-def read_blocks(fname):
-    path = os.path.abspath(fname)
+def read_blocks(fpath):
 
-    with open(path) as f:
+    with open(fpath) as f:
         lines = f.readlines()
 
     inblock = False
@@ -30,7 +29,7 @@ def read_blocks(fname):
             block = Block(lamark.get(lkey))
             inblock = True
         else:
-            block = Block(settings.laraw)
+            block = Block(config.laraw)
             block.code.append(line)
             blocks.append(block)
 
