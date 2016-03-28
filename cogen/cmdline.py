@@ -12,7 +12,7 @@ def execute(argv=None):
         argv = sys.argv
 
     if len(argv) == 2:
-        engine = Generator(sys.argv[1])
+        engine = Generator(argv[1])
         engine.run()
         print engine.get()
     else:

@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 lamark = {
-    '```python': 'python'
+    '```python': 'python',
+    '```file':'file'
 }
 
 laend = '```'

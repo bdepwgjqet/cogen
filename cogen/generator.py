@@ -40,6 +40,10 @@ class Generator(object):
                 code.append(s.getvalue())
                 code.append(config.cobody)
                 code.append(config.cobody)
+            elif block.lang == "file":
+                engine = Generator(block.get().rstrip())
+                engine.run()
+                code.append(engine.get())
             else:
                 code.append(block.get().rstrip())
         return code
