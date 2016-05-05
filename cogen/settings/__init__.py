@@ -10,6 +10,12 @@ class Settings(object):
     """
 
     def __init__(self, fname):
-        self.root_file = path.abspath(fname)
-        self.project_path = path.dirname(self.root_file)
+
+        # project_path - the absolute path where you exec cogen
+        self.project_path = path.abspath('.')
+
+        # project_setting - setting .py file under project_path
         self.project_setting = self.project_path + "/settings.py"
+
+        # current template path
+        self.root_file = path.abspath(fname)
